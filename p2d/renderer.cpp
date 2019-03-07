@@ -74,13 +74,20 @@ int Renderer::init()
 	return 0;
 }
 
-void Renderer::renderEntity(Entity* ent) {
+void Renderer::renderScene(Scene* sc) {
+	sc->camera()->computeMatricesFromInputs(window());
+	_viewMatrix = sc->camera()->getViewMatrix();
+}
 
+void Renderer::renderEntity(Entity* ent) {
+	if (ent->sprite() != nullptr) {
+		this->renderSprite(ent->sprite(), ent->position.x, ent->position.y, ent->scale.x,ent->scale.y, ent->rotation);
+	}
 }
 
 void Renderer::renderSprite(Sprite* sprite, float px, float py, float sx, float sy, float rot)
 {
-	glm::mat4 viewMatrix  = getViewMatrix(); // get from Camera (Camera position and direction)
+	//glm::mat4 viewMatrix  = getViewMatrix(); // get from Camera (Camera position and direction)
 	glm::mat4 modelMatrix = glm::mat4(1.0f);
 
 	// Build the Model matrix
@@ -90,7 +97,7 @@ void Renderer::renderSprite(Sprite* sprite, float px, float py, float sx, float 
 
 	modelMatrix = translationMatrix * rotationMatrix * scalingMatrix;
 
-	glm::mat4 MVP = _projectionMatrix * viewMatrix * modelMatrix;
+	glm::mat4 MVP = _projectionMatrix * _viewMatrix * modelMatrix;
 
 	// Send our transformation to the currently bound shader,
 	// in the "MVP" uniform

@@ -10,12 +10,14 @@
 
 #include <p2d/sprite.h>
 #include <p2d/entity.h>
+#include <p2d/scene.h>
 
 class Renderer
 {
 	public:
 		Renderer(unsigned int w, unsigned int h);
 		virtual ~Renderer();
+		void renderScene(Scene* sc);
 		void renderEntity(Entity* ent);
 		void renderSprite(Sprite* sprite, float px, float py, float sx, float sy, float rot);
 		GLFWwindow* window() { return _window; };
@@ -37,6 +39,7 @@ class Renderer
 
 		GLuint _programID;
 
+		glm::mat4 _viewMatrix;
 		glm::mat4 _projectionMatrix;
 };
 

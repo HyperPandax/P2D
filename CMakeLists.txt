@@ -67,6 +67,8 @@ add_library(p2d
 	p2d/sprite.cpp
 	p2d/entity.h
 	p2d/entity.cpp
+	p2d/scene.cpp
+	p2d/scene.h
 )
 
 # Demo
