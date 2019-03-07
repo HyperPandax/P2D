@@ -9,13 +9,14 @@
 #include <glm/gtx/euler_angles.hpp>
 
 #include <p2d/sprite.h>
+#include <p2d/entity.h>
 
 class Renderer
 {
 	public:
 		Renderer(unsigned int w, unsigned int h);
 		virtual ~Renderer();
-
+		void renderEntity(Entity* ent);
 		void renderSprite(Sprite* sprite, float px, float py, float sx, float sy, float rot);
 		GLFWwindow* window() { return _window; };
 

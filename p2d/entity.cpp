@@ -16,5 +16,5 @@ void Entity::addSprite(Sprite* spr)
 {
 	//deleteSprite();
 	//_sprite = new Sprite();
-	*_sprite = *spr;
+	this->_sprite = spr;
 }

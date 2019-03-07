@@ -74,6 +74,10 @@ int Renderer::init()
 	return 0;
 }
 
+void Renderer::renderEntity(Entity* ent) {
+
+}
+
 void Renderer::renderSprite(Sprite* sprite, float px, float py, float sx, float sy, float rot)
 {
 	glm::mat4 viewMatrix  = getViewMatrix(); // get from Camera (Camera position and direction)
