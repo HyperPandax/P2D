@@ -13,8 +13,6 @@ Camera::~Camera() {
 
 };
 
-glm::mat4 Camera::getViewMatrix()
-{ return _viewMatrix; };
 
 void Camera::computeMatricesFromInputs(GLFWwindow* window)
 {

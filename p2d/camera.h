@@ -16,7 +16,7 @@ public:
 	virtual ~Camera();
 	void computeMatricesFromInputs(GLFWwindow* window);
 
-	glm::mat4 getViewMatrix();
+	glm::mat4 getViewMatrix(){return _viewMatrix;};
 	glm::vec3 getCursor() { return cursor; };
 	
 

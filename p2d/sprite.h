@@ -18,6 +18,8 @@ class Sprite
 		unsigned int width() { return _width; };
 		unsigned int height() { return _height; };
 
+		//void setupSprite(const std::string& filename, float pivotx, float pivoty, float uvwidth, float uvheight);
+		//void setupSprite(const std::string& filename, float pivotx, float pivoty, float uvwidth, float uvheight, int filter, int wrap);
 	private:
 		GLuint loadTGA(const std::string& imagepath);
 

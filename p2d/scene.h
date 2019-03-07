@@ -5,11 +5,12 @@
 #include <p2d/entity.h>
 #include <p2d/camera.h>
 
-class Scene {
-	Scene();
-	virtual ~Scene();
-
+class Scene : public Entity 
+{
 	public:
+		Scene();
+		virtual ~Scene();
+
 		void updateScene(float deltaTime);
 		bool isRunning() { return _isRunning; };
 		Camera* camera() { return _camera; };

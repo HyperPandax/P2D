@@ -74,6 +74,11 @@ add_library(p2d
 # Demo
 add_executable(demo
 	demo/demo.cpp
+	demo/myscene.h
+	demo/myscene.cpp
+	demo/myentity.h
+	demo/myentity.cpp
+
 )
 target_link_libraries(demo
 	p2d

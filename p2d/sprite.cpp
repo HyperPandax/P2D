@@ -187,3 +187,4 @@ GLuint Sprite::loadTGA(const std::string& imagepath)
 	// Return the ID of the texture we just created
 	return textureID;
 }
+

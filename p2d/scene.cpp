@@ -2,7 +2,7 @@
 
 #include <p2d/scene.h>
 
-Scene::Scene()
+Scene::Scene() : Entity()
 {
 	_camera = new Camera();
 	_isRunning = true;

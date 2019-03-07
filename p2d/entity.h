@@ -19,23 +19,34 @@
 
 class Entity
 {
+public:
 	Entity();
 	virtual ~Entity();
-	public:
-	
 
-		virtual void update(float deltaTime) = 0;
-		Sprite* sprite() { return _sprite; };
-		void addSprite(Sprite* spr);
+	Sprite* sprite() { return _sprite; };
+	void addSprite(Sprite* spr);
+	//void addSprite(const std::string& filename);
+	//void addSprite(const std::string& filename, float pivotx, float pivoty);
+	//void addSprite(const std::string& filename, float pivotx, float pivoty, int filter, int wrap);
+
+	virtual void update(float deltaTime) = 0;
 	
-		glm::vec3 position;
-		glm::vec3 scale;
-		float rotation;
+	glm::vec3 position;
+	glm::vec3 scale;
+	float rotation;
 	
 
 	private:
-		Sprite * _sprite;
 		// sprite
+		Sprite * _sprite;
+		
+
+		/*void deleteSprite() {
+			if (_sprite != nullptr) {
+				delete _sprite;
+				_sprite = nullptr;
+			}
+		};*/
 
 };
 
