@@ -1,6 +1,6 @@
 # CMake entry point
 cmake_minimum_required (VERSION 2.6)
-project (MyFramework)
+project (P2D)
 
 find_package(OpenGL REQUIRED)
 
@@ -69,6 +69,8 @@ add_library(p2d
 	p2d/entity.cpp
 	p2d/scene.cpp
 	p2d/scene.h
+	p2d/core.cpp
+	p2d/core.h
 )
 
 # Demo

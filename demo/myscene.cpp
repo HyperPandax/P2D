@@ -1,4 +1,4 @@
-// #include
+     // #include
 #include <fstream>
 #include <sstream>
 #include <vector>
@@ -9,7 +9,8 @@
 
 MyScene::MyScene() : Scene()
 {
-
+	myentity = new MyEntity();
+	this->addChild(myentity);
 }
 
 MyScene::~MyScene()

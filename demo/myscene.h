@@ -14,6 +14,6 @@ class MyScene :  public Scene
 
 	private: 
 		MyEntity * myentity;
-
+		   
 };
 #endif /* MYSCENE_H */

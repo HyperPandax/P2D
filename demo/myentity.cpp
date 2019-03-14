@@ -1,7 +1,8 @@
 #include "myentity.h"
+
 MyEntity::MyEntity() : Entity()
 {
-	//this->sprite()= "assets/pencils.tga";
+	this->addSprite("assets/pencils.tga");
 }
 
 MyEntity::~MyEntity()
