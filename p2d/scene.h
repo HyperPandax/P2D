@@ -11,7 +11,7 @@ class Scene : public Entity
 		Scene();
 		virtual ~Scene();
 
-		void updateScene(float deltaTime);
+		//void updateScene(float deltaTime);
 		bool isRunning() { return _isRunning; };
 		Camera* camera() { return _camera; };
 
@@ -19,7 +19,7 @@ class Scene : public Entity
 		//void stop() { _isRunning = false; };
 
 	private:
-		void _updateEntity(Entity* entity, float deltaTime);
+		//void _updateEntity(Entity* entity, float deltaTime);
 		bool _isRunning;
 		Camera* _camera;
 };

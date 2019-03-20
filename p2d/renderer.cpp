@@ -75,23 +75,25 @@ int Renderer::init()
 }
 
 void Renderer::renderScene(Scene* sc) {
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	sc->camera()->computeMatricesFromInputs(window());
 	_viewMatrix = sc->camera()->getViewMatrix();
-
+	sc->update(16.7f);
 	for (size_t i = 0; i < sc->getChildren().size(); i++) {
 		renderEntity(sc->getChildren()[i]);
 	}
-
+	// Swap buffers
+	glfwSwapBuffers(window());
+	glfwPollEvents();
 }
 
 void Renderer::renderEntity(Entity* ent) {
 	if (ent->sprite() != nullptr) {
 		this->renderSprite(ent->sprite(), ent->position.x, ent->position.y, ent->scale.x,ent->scale.y, ent->rotation);
 	}
-
-	/*for (size_t i = 0; i < sc->getChildren().size(); i++) {
-		renderEntity(sc->getChildren()[i]);
-	}*/
+	for (size_t i = 0; i < ent->getChildren().size(); i++) {
+		renderEntity(ent->getChildren()[i]);
+	}
 }
 
 void Renderer::renderSprite(Sprite* sprite, float px, float py, float sx, float sy, float rot)

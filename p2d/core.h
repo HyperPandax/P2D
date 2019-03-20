@@ -20,6 +20,7 @@ public:
 	virtual ~Core();
 
 	void run(Scene* scene);
+	float deltaTime() { return (float)_deltaTime; };
 
 private:
 	//Renderer _renderer;

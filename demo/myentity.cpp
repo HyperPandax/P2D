@@ -12,5 +12,5 @@ MyEntity::~MyEntity()
 
 void MyEntity::update(float deltaTime)
 {
-
+	
 }
