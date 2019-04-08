@@ -35,7 +35,7 @@ public:
 
 	//datastructure
 	Entity* parent() { return _parent; };
-	std::vector<Entity*> getChildren() { return _children; };
+	std::vector<Entity*>& getChildren() { return _children; };
 	void addChild(Entity* child);
 	void removeChild(Entity* child);
 

@@ -15,8 +15,8 @@ class Scene : public Entity
 		bool isRunning() { return _isRunning; };
 		Camera* camera() { return _camera; };
 
-		//void start() { _isRunning = true; };
-		//void stop() { _isRunning = false; };
+		void start() { _isRunning = true; };
+		void stop() { _isRunning = false; };
 
 	private:
 		//void _updateEntity(Entity* entity, float deltaTime);

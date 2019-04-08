@@ -13,7 +13,11 @@ class MyScene :  public Scene
 		virtual void update(float deltaTime);
 
 	private: 
-		MyEntity * myentity;
-		   
+		MyEntity* myentity;
+		MyEntity* myentity2;
+		MyEntity* myentity3;
+		MyEntity* myentity4;
+		MyEntity* myentity5;
+		MyEntity* myentity6;
 };
 #endif /* MYSCENE_H */

@@ -9,6 +9,7 @@
 
 Renderer::Renderer(unsigned int w, unsigned int h)
 {
+	//_window = nullptr;
 	_window_width = w;
 	_window_height = h;
 
@@ -19,6 +20,7 @@ Renderer::~Renderer()
 {
 	// Cleanup VBO and shader
 	glDeleteProgram(_programID);
+	glfwTerminate();
 }
 
 int Renderer::init()
@@ -34,6 +36,8 @@ int Renderer::init()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
 
+
+	
 	// Open a window and create its OpenGL context
 	_window = glfwCreateWindow( _window_width, _window_height, "Demo", NULL, NULL);
 	if( _window == NULL ){
@@ -75,10 +79,14 @@ int Renderer::init()
 }
 
 void Renderer::renderScene(Scene* sc) {
+	// Clear the screen
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 	sc->camera()->computeMatricesFromInputs(window());
 	_viewMatrix = sc->camera()->getViewMatrix();
-	sc->update(16.7f);
+
+	//sc->update(16.7f);
+
 	for (size_t i = 0; i < sc->getChildren().size(); i++) {
 		renderEntity(sc->getChildren()[i]);
 	}

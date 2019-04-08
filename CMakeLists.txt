@@ -71,6 +71,8 @@ add_library(p2d
 	p2d/scene.h
 	p2d/core.cpp
 	p2d/core.h
+	p2d/input.h
+	p2d/input.cpp
 )
 
 # Demo
